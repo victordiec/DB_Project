@@ -1,22 +1,19 @@
 <?php
   //Start the session
   session_start();
- ?>
+?>
 
  <!DOCTYPE html>
  <html lang="en">
 
  <head>
-
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <meta name="description" content="">
      <meta name="author" content="">
 
-     <title>
-         <?php echo extension_loaded('pgsql') ? 'yes':'no'; ?>
-     </title>
+     <title>Home</title>
 
      <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
      <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +48,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                  </button>
-                 <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                 <a class="navbar-brand" href="#page-top">Movie Database</a>
              </div>
 
              <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,14 +57,14 @@
                      <li class="hidden">
                          <a href="#page-top"></a>
                      </li>
-                     <li class="page-scroll">
+                     <!-- <li class="page-scroll">
                          <a href="#portfolio">Portfolio</a>
                      </li>
                      <li class="page-scroll">
                          <a href="#about">About</a>
-                     </li>
+                     </li> -->
                      <li class="page-scroll">
-                         <a href="#contact">Contact</a>
+                         <a href="#signin">Sign In</a>
                      </li>
                  </ul>
              </div>
@@ -93,7 +90,7 @@
      </header>
 
      <!-- Portfolio Grid Section -->
-     <section id="portfolio">
+     <!-- <section id="portfolio">
          <div class="container">
              <div class="row">
                  <div class="col-lg-12 text-center">
@@ -164,10 +161,10 @@
                  </div>
              </div>
          </div>
-     </section>
+     </section> -->
 
      <!-- About Section -->
-     <section class="success" id="about">
+     <!-- <section class="success" id="about">
          <div class="container">
              <div class="row">
                  <div class="col-lg-12 text-center">
@@ -189,22 +186,22 @@
                  </div>
              </div>
          </div>
-     </section>
+     </section> -->
 
      <!-- Contact Section -->
-     <section id="contact">
+     <section id="signin">
          <div class="container">
              <div class="row">
                  <div class="col-lg-12 text-center">
-                     <h2>Contact Me</h2>
-                     <hr class="star-primary">
+                     <h2>Sign In</h2>
+                     <!-- <hr class="star-primary"> -->
                  </div>
              </div>
              <div class="row">
                  <div class="col-lg-8 col-lg-offset-2">
                      <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                      <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                     <form name="sentMessage" id="contactForm" novalidate>
+                     <form name="sentMessage" id="signInForm" novalidate>
                          <div class="row control-group">
                              <div class="form-group col-xs-12 floating-label-form-group controls">
                                  <label>Username</label>
@@ -523,7 +520,7 @@
 
      <!-- Contact Form JavaScript -->
      <script src="js/jqBootstrapValidation.js"></script>
-     <script src="js/contact_me.js"></script>
+     <script src="js/signin.js"></script>
 
      <!-- Custom Theme JavaScript -->
      <script src="js/freelancer.js"></script>
