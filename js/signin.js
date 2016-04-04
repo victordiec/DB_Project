@@ -44,18 +44,18 @@ $(function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
 
-                    // if(data.indexOf("Batman") != -1)
-                    // {
-                    //   console.log("\nthis works");
-                    // }
-                    $.ajax({
-                        url: "././core/destroysession.php",
-                        type: "POST",
-                        success: function(){
-                          console.log("Should have destroyed php session");
-                        }
-                      }
-                    );
+                    // // if(data.indexOf("Batman") != -1)
+                    // // {
+                    // //   console.log("\nthis works");
+                    // // }
+                    // $.ajax({
+                    //     url: "././core/destroysession.php",
+                    //     type: "POST",
+                    //     success: function(){
+                    //       console.log("Should have destroyed php session");
+                    //     }
+                    //   }
+                    // );
 
                     window.location="home.php";
                   }

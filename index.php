@@ -1,7 +1,7 @@
 <?php
   //Start the session
   session_start();
-  
+
 ?>
 
  <!DOCTYPE html>
@@ -21,6 +21,7 @@
 
      <!-- Custom CSS -->
      <link href="css/freelancer.css" rel="stylesheet">
+     <link href="css/dbcustom.css" rel="stylesheet">
 
      <!-- Custom Fonts -->
      <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -51,7 +52,6 @@
                  </button>
                  <a class="navbar-brand" href="#page-top">Movie Database</a>
              </div>
-
              <!-- Collect the nav links, forms, and other content for toggling -->
              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                  <ul class="nav navbar-nav navbar-right">
@@ -76,7 +76,7 @@
 
      <!-- Header -->
      <header>
-         <div class="container">
+         <!-- <div class="container">
              <div class="row">
                  <div class="col-lg-12">
                      <img class="img-responsive" src="img/profile.png" alt="">
@@ -87,107 +87,31 @@
                      </div>
                  </div>
              </div>
-         </div>
+         </div> -->
      </header>
 
-     <!-- Portfolio Grid Section -->
-     <!-- <section id="portfolio">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-12 text-center">
-                     <h2>Portfolio</h2>
-                     <hr class="star-primary">
-                 </div>
-             </div>
-             <div class="row">
-                 <div class="col-sm-4 portfolio-item">
-                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                         <div class="caption">
-                             <div class="caption-content">
-                                 <i class="fa fa-search-plus fa-3x"></i>
-                             </div>
-                         </div>
-                         <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-                     </a>
-                 </div>
-                 <div class="col-sm-4 portfolio-item">
-                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                         <div class="caption">
-                             <div class="caption-content">
-                                 <i class="fa fa-search-plus fa-3x"></i>
-                             </div>
-                         </div>
-                         <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-                     </a>
-                 </div>
-                 <div class="col-sm-4 portfolio-item">
-                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                         <div class="caption">
-                             <div class="caption-content">
-                                 <i class="fa fa-search-plus fa-3x"></i>
-                             </div>
-                         </div>
-                         <img src="img/portfolio/circus.png" class="img-responsive" alt="">
-                     </a>
-                 </div>
-                 <div class="col-sm-4 portfolio-item">
-                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                         <div class="caption">
-                             <div class="caption-content">
-                                 <i class="fa fa-search-plus fa-3x"></i>
-                             </div>
-                         </div>
-                         <img src="img/portfolio/game.png" class="img-responsive" alt="">
-                     </a>
-                 </div>
-                 <div class="col-sm-4 portfolio-item">
-                     <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                         <div class="caption">
-                             <div class="caption-content">
-                                 <i class="fa fa-search-plus fa-3x"></i>
-                             </div>
-                         </div>
-                         <img src="img/portfolio/safe.png" class="img-responsive" alt="">
-                     </a>
-                 </div>
-                 <div class="col-sm-4 portfolio-item">
-                     <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                         <div class="caption">
-                             <div class="caption-content">
-                                 <i class="fa fa-search-plus fa-3x"></i>
-                             </div>
-                         </div>
-                         <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-                     </a>
-                 </div>
-             </div>
-         </div>
-     </section> -->
+    <!-- Carousel Section -->
+    <section id="slider">
+      <!-- <div class="container"> -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-     <!-- About Section -->
-     <!-- <section class="success" id="about">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-12 text-center">
-                     <h2>About</h2>
-                     <hr class="star-light">
-                 </div>
-             </div>
-             <div class="row">
-                 <div class="col-lg-4 col-lg-offset-2">
-                     <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-                 </div>
-                 <div class="col-lg-4">
-                     <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-                 </div>
-                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                     <a href="#" class="btn btn-lg btn-outline">
-                         <i class="fa fa-download"></i> Download Theme
-                     </a>
-                 </div>
-             </div>
-         </div>
-     </section> -->
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="img/FrontWallpaper/bvs.jpg">
+            </div>
+
+            <div class="item">
+              <img src="img/FrontWallpaper/deadpool.jpg">
+            </div>
+
+            <div class="item">
+              <img src="img/FrontWallpaper/interstellar.jpg">
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </section>
 
      <!-- Contact Section -->
      <section id="signin">
@@ -232,7 +156,7 @@
 
      <!-- Footer -->
      <footer class="text-center">
-         <div class="footer-above">
+         <!-- <div class="footer-above">
              <div class="container">
                  <div class="row">
                      <div class="footer-col col-md-4">
@@ -265,12 +189,12 @@
                      </div>
                  </div>
              </div>
-         </div>
+         </div> -->
          <div class="footer-below">
              <div class="container">
                  <div class="row">
                      <div class="col-lg-12">
-                         Copyright &copy; Your Website 2014
+                         Copyright &copy; Movie Database 2014
                      </div>
                  </div>
              </div>
@@ -285,7 +209,7 @@
      </div>
 
      <!-- Portfolio Modals -->
-     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+     <!-- <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
          <div class="modal-content">
              <div class="close-modal" data-dismiss="modal">
                  <div class="lr">
@@ -506,7 +430,7 @@
                  </div>
              </div>
          </div>
-     </div>
+     </div> -->
 
      <!-- jQuery -->
      <script src="js/jquery.js"></script>
