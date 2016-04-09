@@ -9,50 +9,56 @@ if(empty($_POST['username']) || empty($_POST['password']))
 	echo "No arguments Provided!";
 	return false;
    }
-  //  else {
-  //    echo "lol";
-  //  }
+
+$ini_array = parse_ini_file("connect.ini");
+// echo print_r($ini_array);
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$_SESSION['username'] = $username;
-$_SESSION['password'] = $password;
+
 
 // echo "test.php $username $password";
 
-$dbconn = pg_connect("host=web0.site.uottawa.ca port=15432 dbname=$username user=$username password=$password")
+$dbconn = pg_connect("host=web0.site.uottawa.ca port=15432 dbname=" . $ini_array['username'] . " user=" . $ini_array['username'] . " password=" . $ini_array['password'])
     or die('Could not connect: ' . pg_last_error());
-// echo "\n\n";
-// echo pg_last_error();
 
+//Need to save the db session??
+$_SESSION['dbConnect'] = $dbconn;
 
 //Check to see if a proper connection to the database was made
 if($dbconn == "FALSE")
 {
-  echo "Failed to connect";
-  return false;
+  echo "false";
 }
 else {
   // echo $dbconn;
 }
 
+$match = false;
+
 //Test Query for now
-$query = "set search_path=\"GroupAssign\"; SELECT * FROM MOVIE";
-$result = pg_query($query);// or die('Query failed: ' . pg_last_error());
-echo json_encode(pg_fetch_array($result, null, PGSQL_ASSOC));
-echo "\n\n" + $result;
+$query = "SELECT U.Userid,U.password FROM USERS U";
+$result = pg_query($_SESSION['dbConnect'], $query);// or die('Query failed: ' . pg_last_error());
 
-// Printing results in HTML
-// echo "<table>\n";
-// while ($line = pg_fetch_array($result, null, PGSQL_ASSOC))
-// {
-//     echo "\t<tr>\n";
-//     foreach ($line as $col_value) {
-//         echo "\t\t<td>$col_value</td>\n";
-//     }
-//     echo "\t</tr>\n";
-// }
-// echo "</table>\n";
+while ($row = pg_fetch_row($result)) {
 
-return true;
+  // echo "\nrow 0:" . $row[0] . ", row 1:" . $row[1] . "\nusername:" . $username . ",password:" . $password;
+
+  if(($row[0] == $username) && ($row[1] == $password))
+  {
+    $_SESSION['username'] = $username;
+    $_SESSION['password'] = $password;
+    // echo "true\n";
+    $match = true;
+  }
+}
+
+if($match == true)
+{
+  echo "true";
+}
+else {
+  echo "false";
+}
+
 ?>

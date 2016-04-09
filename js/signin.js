@@ -27,9 +27,20 @@ $(function() {
                 cache: false,
                 success: function(data) {
                   console.log("ajax request was a success");
-                  // console.log("Beginning of data\n" + data + "\nendof");
+                  console.log("Beginning of data\n" + data + "\nendof");
 
-                  if(data.indexOf("Could not connect: ") != -1)
+                  if(data === "false")
+                  {
+                      console.log("Incorrect username/password");
+                      $('#success').html("<div class='alert alert-danger'>");
+                      $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                          .append("</button>");
+                      $('#success > .alert-danger').append("<strong>Incorrect username/password combination.  Please try again ;P");
+                      $('#success > .alert-danger').append('</div>');
+                      //clear all fields
+                      $('#contactForm').trigger("reset");
+                  }
+                  else if(data.indexOf("Could not connect: ") != -1)
                   {
                     console.log("Could not connect to database");
                     $('#success').html("<div class='alert alert-danger'>");
@@ -43,19 +54,6 @@ $(function() {
                   else {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
-
-                    // // if(data.indexOf("Batman") != -1)
-                    // // {
-                    // //   console.log("\nthis works");
-                    // // }
-                    // $.ajax({
-                    //     url: "././core/destroysession.php",
-                    //     type: "POST",
-                    //     success: function(){
-                    //       console.log("Should have destroyed php session");
-                    //     }
-                    //   }
-                    // );
 
                     window.location="home.php";
                   }

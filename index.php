@@ -1,7 +1,6 @@
 <?php
   //Start the session
   session_start();
-
 ?>
 
  <!DOCTYPE html>
@@ -14,7 +13,7 @@
      <meta name="description" content="">
      <meta name="author" content="">
 
-     <title>Home</title>
+     <title>Movie Database - Log In</title>
 
      <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
      <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -113,7 +112,7 @@
       <!-- </div> -->
     </section>
 
-     <!-- Contact Section -->
+     <!-- Sign In Section -->
      <section id="signin">
          <div class="container">
              <div class="row">
