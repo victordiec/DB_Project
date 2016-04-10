@@ -9,6 +9,8 @@ INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00007','The 
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00008','Mad Max: Fury Road', '05-15-2015', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00009','Creed', '11-19-2015', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00010','Inside Out', '06-19-2015', 10);
+INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00011','Zootopia', '04-04-2016', 10);
+INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00012','Big Hero 6', '11-7-2014', 10);
 
 -- Actor Injections
 INSERT INTO Actor (ActorID, Lastname, Firstname, BirthDate, Country) VALUES ('00001','Affleck', 'Ben', '08-15-1972', 'United States');

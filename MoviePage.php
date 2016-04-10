@@ -1,3 +1,8 @@
+<?php
+  //Start the session
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,7 +108,8 @@
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item"
+                     src="http://placehold.it/500x300" alt="">
                 </a>
             </div>
 
@@ -132,7 +138,7 @@
 
         <!-- Footer -->
         <footer>
-        
+
         </footer>
 
     </div>
