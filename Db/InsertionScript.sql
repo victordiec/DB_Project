@@ -9,7 +9,6 @@ INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00007','The 
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00008','Mad Max: Fury Road', '05-15-2015', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00009','Creed', '11-19-2015', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00010','Inside Out', '06-19-2015', 10);
-<<<<<<< HEAD
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00011','Rush Hour', '08-18-1998', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00012','Now you see me', '05-21-2013', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00013','Trainwreck', '07-17-2015', 10);
@@ -20,10 +19,6 @@ INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00017','The 
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00018','Goodfellas', '09-21-1990', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00019','Forrest Gump', '07-06-1994', 10);
 INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00020','The Matrix', '03-31-1999', 10);
-=======
-INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00011','Zootopia', '04-04-2016', 10);
-INSERT INTO Movie (MovieID, Name, Releasedate, MPAARating) VALUES ('00012','Big Hero 6', '11-7-2014', 10);
->>>>>>> 3968198dac52e37c35fccd2cf8b0fa04af1e7777
 
 -- Actor Injections
 INSERT INTO Actor (ActorID, Lastname, Firstname, BirthDate, Country) VALUES ('00001','Affleck', 'Ben', '08-15-1972', 'United States');
