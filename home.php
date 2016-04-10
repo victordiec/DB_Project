@@ -2,7 +2,11 @@
   //Start the session
   session_start();
   // print_r($_SESSION);
-
+  //
+  // include 'core/db.php';
+  // //Test Query for now
+  // $query = "SELECT * FROM Movie m WHERE m.movieId=";
+  // $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
 ?>
 
 <!DOCTYPE html>

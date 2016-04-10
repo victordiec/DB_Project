@@ -58,8 +58,10 @@ CREATE TABLE Movie
 MovieID VARCHAR(20) PRIMARY KEY UNIQUE,
 Name VARCHAR(20),
 Releasedate DATE,
---the lower limit for what ages should watch this movie
-MPAARating INTEGER
+--the mpaa rating is the rating given by the MPAA
+MPAARating VARCHAR(5),
+Description TEXT,
+TrailerLink TEXT
 );
 
 --relation between user and a movie
