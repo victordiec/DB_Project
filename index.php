@@ -1,6 +1,16 @@
 <?php
   //Start the session
   session_start();
+  // print_r($_SESSION);
+
+  //Don't need to show the sign in page if you're already logged in 
+  if(isset($_SESSION['username']))
+  {
+    header('Location: home.php');
+  }
+  else {
+    // echo "lol";
+  }
 ?>
 
  <!DOCTYPE html>
@@ -225,7 +235,7 @@
 
      <!-- Custom Theme JavaScript -->
      <script src="js/freelancer.js"></script>
-
+     <script src="js/custom.js"></script>
  </body>
 
  </html>

@@ -1,6 +1,8 @@
 <?php
   //Start the session
   session_start();
+  // print_r($_SESSION);
+
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +70,9 @@
                   <li class="page-scroll">
                       <a href="#WillGoToTheAccountPage">My Account</a>
                   </li>
+                  <li class="page-scroll" id="signout">
+                      <a href="index.php">Sign Out</a>
+                  </li>
               </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -85,62 +90,62 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00001">
                     <img class="img-responsive" src="img/moviePos/00001.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00002">
                     <img class="img-responsive" src="img/moviePos/00002.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00003">
                     <img class="img-responsive" src="img/moviePos/00003.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00004">
                     <img class="img-responsive" src="img/moviePos/00004.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00005">
                     <img class="img-responsive" src="img/moviePos/00005.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00006">
                     <img class="img-responsive" src="img/moviePos/00006.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00007">
                     <img class="img-responsive" src="img/moviePos/00007.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00008">
                     <img class="img-responsive" src="img/moviePos/00008.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00009">
                     <img class="img-responsive" src="img/moviePos/00009.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00010">
                     <img class="img-responsive" src="img/moviePos/00010.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00011">
                     <img class="img-responsive" src="img/moviePos/00011.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
+                <a class="thumbnail" href="MoviePage.php?movieId=00012">
                     <img class="img-responsive" src="img/moviePos/00012.jpg" alt="">
                 </a>
             </div>
@@ -173,6 +178,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+    <script src="js/custom.js"></script>
 
 </body>
 
