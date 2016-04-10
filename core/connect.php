@@ -10,20 +10,20 @@ if(empty($_POST['username']) || empty($_POST['password']))
 	return false;
    }
 
-$ini_array = parse_ini_file("connect.ini");
+// $ini_array = parse_ini_file("connect.ini");
+// echo "test.php $username $password";
+//
+// $dbconn = pg_connect("host=web0.site.uottawa.ca port=15432 dbname=" . $ini_array['username'] . " user=" . $ini_array['username'] . " password=" . $ini_array['password'])
+//     or die('Could not connect: ' . pg_last_error());
+//
+// //Need to save the db session??
+// $_SESSION['dbConnect'] = $dbconn;
 // echo print_r($ini_array);
+
+include 'db.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-
-
-// echo "test.php $username $password";
-
-$dbconn = pg_connect("host=web0.site.uottawa.ca port=15432 dbname=" . $ini_array['username'] . " user=" . $ini_array['username'] . " password=" . $ini_array['password'])
-    or die('Could not connect: ' . pg_last_error());
-
-//Need to save the db session??
-$_SESSION['dbConnect'] = $dbconn;
 
 //Check to see if a proper connection to the database was made
 if($dbconn == "FALSE")
@@ -38,7 +38,7 @@ $match = false;
 
 //Test Query for now
 $query = "SELECT U.Userid,U.password FROM USERS U";
-$result = pg_query($_SESSION['dbConnect'], $query);// or die('Query failed: ' . pg_last_error());
+$result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
 
 while ($row = pg_fetch_row($result)) {
 
