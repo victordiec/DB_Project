@@ -15,7 +15,7 @@
   // $average_rating
 
   $query =
-    "SELECT D.FirstName, D.LastName
+    "SELECT D.FirstName, D.LastName, D.DirectorId
     FROM Director D, Directs R, Movie M
     WHERE D.DirectorID=R.DirectorID AND R.MovieID=M.MovieID AND M.MovieID='$movieId';";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
@@ -28,6 +28,9 @@
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $tempArr = pg_fetch_assoc($result);
   $averageRating=$tempArr['rating'];
+  $rating=round($averageRating);
+
+  $query="SELECT "
 
 ?>
 
@@ -157,29 +160,28 @@
                         <?php echo $movieInfo['releasedate'];?>
                       </p>
                     </li>
-                    <li>Average Rating
+                    <li>
+                      <strong id="#ratingItem" class="choice">Average Rating</strong>
                       <p>
                         <!-- <strong class="choice">Choose a rating</strong> -->
                         <div class="stars" id="rating">
                           <form action="">
-                            <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+                            <input class="star star-5" id="star-5" type="radio" name="star" value="5" <?php if($rating==5){echo "checked";} ?>/>
                             <label class="star star-5" for="star-5"></label>
-                            <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+                            <input class="star star-4" id="star-4" type="radio" name="star" value="4" <?php if($rating==4){echo "checked";} ?>/>
                             <label class="star star-4" for="star-4"></label>
-                            <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+                            <input class="star star-3" id="star-3" type="radio" name="star" value="3" <?php if($rating==3){echo "checked";} ?>/>
                             <label class="star star-3" for="star-3"></label>
-                            <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+                            <input class="star star-2" id="star-2" type="radio" name="star" value="2" <?php if($rating==2){echo "checked";} ?>/>
                             <label class="star star-2" for="star-2"></label>
-                            <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+                            <input class="star star-1" id="star-1" type="radio" name="star" value="1" <?php if($rating==1){echo "checked";} ?>/>
                             <label class="star star-1" for="star-1"></label>
                           </form>
                         </div>
-                        <!-- <strong class="choice">Choose a rating</strong> -->
-                        <!-- <?php echo $averageRating;?> -->
                       </p>
                     </li>
                     <li>Director:
-                      <a href="#">
+                      <!-- <a href="DirectorPage.php?directorId=<?php echo $directorInfo['directorId'];?>"> -->
                         <p>
                           <?php echo $directorInfo['firstname'] . " " . $directorInfo['lastname'];?>
                         </p>

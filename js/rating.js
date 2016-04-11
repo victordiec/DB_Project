@@ -16,7 +16,7 @@ $(':radio').change(
 
     var dateString= mm + "-" + dd + "-" + yyyy;
 
-    alert(newRating + ' stars\n' + newRating + "\n" + movieId + "\n" + dateString);
+    // alert(newRating + ' stars\n' + newRating + "\n" + movieId + "\n" + dateString);
     $.ajax({
         url: "././core/updateRating.php",
         type: "POST",
@@ -27,8 +27,14 @@ $(':radio').change(
         },
           success: function(data) {
             console.log("Beginning of data\n" + data + "\nendof");
+            $(".choice").text("Thanks for Rating!");
           }
 
       });
   }
-)
+);
+
+// $("#rating").mouseover(function(){
+//   alrt("lol");
+// }
+// )
