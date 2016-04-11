@@ -5,6 +5,12 @@ body
   background-color: #EBEBEB
 }
 
+.img-responsive{
+  max-height:400px;
+  /*max-width: 300px;*/
+
+}
+
 div.stars {
   width: 270px;
   display: inline-block;

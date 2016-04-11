@@ -55,7 +55,7 @@ $(function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
 
-                    window.location="home.php";
+                    window.location="movies.php";
                   }
 
                     // $('#success').html("<div class='alert alert-success'>");

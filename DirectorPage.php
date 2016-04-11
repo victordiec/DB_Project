@@ -19,11 +19,22 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $movies = pg_fetch_all($result);
 
-  print_r($directorInfo);
-  print_r($movies);
+  // print_r($directorInfo);
+  // print_r($movies);
 
   // $query = "SELECT * FROM Movie m WHERE m.movieId='$movieId'";
   // $average_rating
+
+  $query="SELECT AVG(W.Rating) AS avgrating
+          FROM Movie M, Watches W, Director D, Directs R
+          WHERE M.MovieId=W.MovieID AND D.DirectorID=R.DirectorID AND M.MovieId=R.MovieId AND D.DirectorId='$directorId';";
+  $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
+
+  //Should only be one result so don't need to fetch all
+  $rating = pg_fetch_assoc($result);
+  // print_r($rating);
+  $average_rating=$rating['avgrating'];
+  $rating=round($average_rating);
 
 ?>
 
@@ -76,7 +87,7 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="home.php">Movie Database</a>
+              <a class="navbar-brand" href="movies.php">Movie Database</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -140,6 +151,23 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
                       }
                       ?>
                  </ul>
+                 <h3>Average Rating For Movies</h3>
+                 <p>
+                   <!-- <strong class="choice">Choose a rating</strong> -->
+                   <div class="stars" id="rating">
+                     <form action="">
+                       <input class="star star-5" id="star-5" type="radio" name="star" value="5" <?php if($rating==5){echo "checked";}else{echo "disabled";} ?>/>
+                       <label class="star star-5" for="star-5"></label>
+                       <input class="star star-4" id="star-4" type="radio" name="star" value="4" <?php if($rating==4){echo "checked";}else{echo "disabled";} ?>/>
+                       <label class="star star-4" for="star-4"></label>
+                       <input class="star star-3" id="star-3" type="radio" name="star" value="3" <?php if($rating==3){echo "checked";}else{echo "disabled";} ?>/>
+                       <label class="star star-3" for="star-3"></label>
+                       <input class="star star-2" id="star-2" type="radio" name="star" value="2" <?php if($rating==2){echo "checked";}else{echo "disabled";} ?>/>
+                       <label class="star star-2" for="star-2"></label>
+                       <input class="star star-1" id="star-1" type="radio" name="star" value="1" <?php if($rating==1){echo "checked";}else{echo "disabled";} ?>/>
+                       <label class="star star-1" for="star-1"></label>
+                     </form>
+                   </div>
             </div>
 
         </div>
@@ -180,6 +208,25 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
         </div>
         <!-- /.row -->
 
+        <!-- Footer -->
+        <footer class="text-center">
+            <div class="footer-below">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            Copyright &copy; Movie Database 2014
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+        <div class="scroll-top page-scroll visible-xs visible-sm">
+            <a class="btn btn-primary" href="#page-top">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+        </div>
 
         <!-- Video / Generic Modal -->
         <div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -194,10 +241,7 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
 
         <hr>
 
-        <!-- Footer -->
-        <footer>
 
-        </footer>
 
     </div>
     <!-- /.container -->
