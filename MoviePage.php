@@ -37,6 +37,18 @@
   // print_r($actors);
   // $query="SELECT ";
 
+  $query = "SELECT S.Name FROM Movie M, Studio S, Sponsors P
+            WHERE M.MovieID=P.MovieID AND S.StudioID=P.StudioID AND M.MovieID='$movieId';";
+  $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
+  $studio = pg_fetch_assoc($result);
+  print_r($studio);
+
+  $query = "SELECT T.Descirption FROM Movie M, Topics T, MovieTopics R
+            WHERE M.MovieID=R.MovieID AND T.TopicId=R.TopicId AND M.MovieID='$movieId';";
+  $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
+  $topics = pg_fetch_all($result);
+  // print_r($topics);
+
 ?>
 
 <!DOCTYPE html>
@@ -162,6 +174,12 @@
                 <h3>Movie Details</h3>
                 <ul>
                     <li>
+                      <strong id="#studioLabel" class="choice">Production Studio:</strong>
+                      <p>
+                        <?php echo $studio['name'];?>
+                      </p>
+                    </li>
+                    <li>
                       <strong id="#releasedate" class="choice">Release date:</strong>
                       <p>
                         <?php echo $movieInfo['releasedate'];?>
@@ -190,11 +208,30 @@
                     <li><strong id="#directorlabel" class="choice">Director:</strong>
                       <a href="DirectorPage.php?directorId=<?php echo $directorInfo['directorid'];?>">
                         <p>
-
                           <?php echo $directorInfo['firstname'] . " " . $directorInfo['lastname'];?>
                         </p>
                       </a>
                     </li>
+                    <li><strong id="#topicsLabel" class="choice">Topics:</strong>
+                        <p>
+                          <ul>
+                          <?php
+                          if(!empty($topics))
+                          {
+                            foreach($topics as $topic)
+                            {
+                              $description = $topic['description'];
+                              echo "<li>$description</li>";
+                            }
+                          }
+                          else {
+                            echo "None at the moment =P";
+                          }
+                          ?>
+                        </ul>
+                        </p>
+                    </li>
+
                 </ul>
             </div>
             <div class="col-lg-8">
