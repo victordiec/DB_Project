@@ -1,7 +1,7 @@
 <?php
   //Start the session
   session_start();
-  // print_r($_SESSION);
+  print_r($_SESSION);
 
   $movieId = $_GET['movieId'];
 
@@ -28,6 +28,7 @@
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $tempArr = pg_fetch_assoc($result);
   $averageRating=$tempArr['rating'];
+
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +56,7 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -142,8 +144,6 @@
                       </a>
                     </div>
                   </div>
-
-
                 </div>
             </div>
 
@@ -157,10 +157,25 @@
                         <?php echo $movieInfo['releasedate'];?>
                       </p>
                     </li>
-                    <li>Rating
+                    <li>Average Rating
                       <p>
                         <!-- <strong class="choice">Choose a rating</strong> -->
-                        <?php echo $averageRating;?>
+                        <div class="stars" id="rating">
+                          <form action="">
+                            <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+                            <label class="star star-5" for="star-5"></label>
+                            <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+                            <label class="star star-4" for="star-4"></label>
+                            <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+                            <label class="star star-3" for="star-3"></label>
+                            <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+                            <label class="star star-2" for="star-2"></label>
+                            <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+                            <label class="star star-1" for="star-1"></label>
+                          </form>
+                        </div>
+                        <!-- <strong class="choice">Choose a rating</strong> -->
+                        <!-- <?php echo $averageRating;?> -->
                       </p>
                     </li>
                     <li>Director:
