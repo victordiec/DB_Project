@@ -30,7 +30,7 @@
   $averageRating=$tempArr['rating'];
   $rating=round($averageRating);
 
-  $query="SELECT "
+  // $query="SELECT ";
 
 ?>
 

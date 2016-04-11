@@ -235,50 +235,50 @@ INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES 
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00020', 'English', 'y', 'Canada'); 
 
 --Role Injections
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00001','Batman', '00001'); --Batman/Superman
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00002','Superman', '00003'); --Batman/Superman
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00003','Superwoman', '00002'); --Batman/Superman
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00004','Terminator', '00005'); --Terminator
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00005','Deadpool', '00007'); --Deadpool
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00006','Owen', '00006'); --Jurassic World
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00007','Magnito', '00009'); --X-Men: Apocalypse
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00008','Mystique', '00008'); --X-Men: Apocalypse
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00009','Joker', '00010'); --Suicide Squad
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00010','Deadshot', '00011'); --Suicide Squad
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00011','Kaa', '00012'); --The Jungle Book
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00012','Baloo', '00013'); --The Jungle Book
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00013','Max', '00014'); --Mad Max
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00014','Creeds Son', '00015'); --Creed
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00015','Joy', '00016'); --Inside out
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00016','Fear', '00017'); --Inside out
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00017','Lee', '00018'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00018','Detective', '00019'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00019','Dylan', '00020'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00020','McKinney', '00021'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00021','Henley', '00022'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00022','Daniel', '00004'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00023','Amy', '00024'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00024','Steven', '00025'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00025','Bill', '00017'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00026','Saul', '00026'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00027','Dale', '00027'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00028','Amber', '00028'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00029','Matheson', '00029'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00030','Hugh', '00030'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00031','John', '00014'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00032','Jim', '00031'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00033','Batman', '00032'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00034','Joker', '00033'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00035','Lucius', '00034'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00036','Alfred', '00021'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00037','Micheal', '00035'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00038','Vito', '00036'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00039','Forrest', '00037'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00040','Dan', '00038'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00041','Jenny', '00039'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00042','Neo', '00040'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00043','Trinity', '00041'); 
-INSERT INTO Role (RoleID, Name, ActorID) VALUES ('00044','Morpheus', '00042'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00001','Batman', '00001','00001'); --Batman/Superman
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00002','Superman', '00003','00001'); --Batman/Superman
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00003','Superwoman', '00002','00001'); --Batman/Superman
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00004','Terminator', '00005','00002'); --Terminator
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00005','Deadpool', '00007','00003'); --Deadpool
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00006','Owen', '00006','00004'); --Jurassic World
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00007','Magnito', '00009','00005'); --X-Men: Apocalypse
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00008','Mystique', '00008','00005'); --X-Men: Apocalypse
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00009','Joker', '00010','00006'); --Suicide Squad
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00010','Deadshot', '00011','00006'); --Suicide Squad
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00011','Kaa', '00012','00007'); --The Jungle Book
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00012','Baloo', '00013','00007'); --The Jungle Book
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00013','Max', '00014','00008'); --Mad Max
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00014','Creeds Son', '00015','00009'); --Creed
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00015','Joy', '00016','00010'); --Inside out
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00016','Fear', '00017','00010'); --Inside out
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00017','Lee', '00018','00011'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00018','Detective', '00019','00011'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00019','Dylan', '00020','00012'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00020','McKinney', '00021','00012'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00021','Henley', '00022','00012'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00022','Daniel', '00004','00012'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00023','Amy', '00024','00013'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00024','Steven', '00025','00013'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00025','Bill', '00017','00013'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00026','Saul', '00026','00014'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00027','Dale', '00027','00014'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00028','Amber', '00028','00014'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00029','Matheson', '00029','00014'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00030','Hugh', '00030','00015'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00031','John', '00014','00015'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00032','Jim', '00031','00015'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00033','Batman', '00032','00016'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00034','Joker', '00033','00016'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00035','Lucius', '00034','00016'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00036','Alfred', '00021','00016'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00037','Micheal', '00035','00017'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00038','Vito', '00036','00017'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00039','Forrest', '00037','00019'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00040','Dan', '00038','00019'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00041','Jenny', '00039','00019'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00042','Neo', '00040','00020'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00043','Trinity', '00041','00020'); 
+INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00044','Morpheus', '00042','00020'); 
 
 
 --Watches Injections
