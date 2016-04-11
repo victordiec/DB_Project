@@ -11,7 +11,7 @@
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $userInfo = pg_fetch_assoc($result);
 
-  $query = "SELECT M.MovieId, M.Name, W.Rating FROM Users U, Watches W, Movie M WHERE U.userId=W.userid AND W.MovieId=M.MovieId AND U.userid='$userId';";
+  $query = "SELECT M.MovieId, M.Name, W.Rating FROM Users U, Watches W, Movie M WHERE U.userId=W.userid AND W.MovieId=M.MovieId AND U.userid='$userId' ORDER BY M.Name;";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $movieRatings = pg_fetch_all($result);
 
@@ -117,12 +117,30 @@
               <?php
                 if(!empty($movieRatings))
                 {
+                  $j= 0;
                   foreach($movieRatings as $movieRating)
                   {
+
                     $movieId = $movieRating['movieid'];
                     $movieName = $movieRating['name'];
                     $rating = $movieRating['rating'];
-                    echo "<tr><td><a href=\"MoviePage.php?movieId=$movieId\"><h4>$movieName</h4></a></td><td>$rating</td></tr>";
+                    echo "<tr><td><a href=\"MoviePage.php?movieId=$movieId\"><h4>$movieName</h4></a></td><td>";
+                    echo "<div class=\"stars\" id=\"rating$movieId\"><form action=\"\">";
+
+                    for($i = 5; $i > 0; $i--)
+                    {
+                      echo "<input class=\"star star-$i\" id=\"star-$i\" type=\"radio\" name=\"star$\" value=\"$i\"";
+                      if($i == $rating)
+                      {
+                        echo "checked /><label class=\"star star-$i\" for=\"star-$i\"></label>";
+                      }
+                      else {
+                        echo "disabled /><label class=\"star star-$i\" for=\"star-$i\"></label>";
+                      }
+                    }
+                    echo "</td></tr></form></div>";
+
+                    $j++;
                   }
                 }
               ?>
