@@ -153,6 +153,47 @@
                     <img class="img-responsive" src="img/moviePos/00012.jpg" alt="">
                 </a>
             </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00013">
+                    <img class="img-responsive" src="img/moviePos/00013.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00014">
+                    <img class="img-responsive" src="img/moviePos/00014.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00015">
+                    <img class="img-responsive" src="img/moviePos/00015.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00016">
+                    <img class="img-responsive" src="img/moviePos/00016.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00017">
+                    <img class="img-responsive" src="img/moviePos/00017.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00018">
+                    <img class="img-responsive" src="img/moviePos/00018.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00019">
+                    <img class="img-responsive" src="img/moviePos/00019.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="MoviePage.php?movieId=00020">
+                    <img class="img-responsive" src="img/moviePos/00020.jpg" alt="">
+                </a>
+            </div>
+
         </div>
 
         <hr>
@@ -161,7 +202,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    
                 </div>
             </div>
         </footer>
