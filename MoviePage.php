@@ -21,6 +21,13 @@
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $directorInfo = pg_fetch_assoc($result);
 
+
+  $query="SELECT AVG(W.Rating) AS rating
+          FROM Movie M, Watches W
+          WHERE W.MovieId=M.MovieId AND M.MovieId='$movieId';";
+  $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
+  $tempArr = pg_fetch_assoc($result);
+  $averageRating=$tempArr['rating'];
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +157,12 @@
                         <?php echo $movieInfo['releasedate'];?>
                       </p>
                     </li>
-                    <li>Rating</li>
+                    <li>Rating
+                      <p>
+                        <!-- <strong class="choice">Choose a rating</strong> -->
+                        <?php echo $averageRating;?>
+                      </p>
+                    </li>
                     <li>Director:
                       <a href="#">
                         <p>
@@ -227,6 +239,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/youtube.js"></script>
+    <script src="js/rating.js"></script>
     <!-- <script src="js/getmovie.js"></script> -->
 
 </body>

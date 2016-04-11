@@ -61,6 +61,8 @@ Releasedate DATE,
 --the mpaa rating is the rating given by the MPAA
 MPAARating VARCHAR(5),
 Description TEXT,
+
+--the 
 TrailerLink TEXT
 );
 
@@ -74,7 +76,7 @@ Rating INTEGER,
 PRIMARY KEY(UserID, MovieID),
 FOREIGN KEY(UserID) REFERENCES Users,
 FOREIGN KEY(MovieID) REFERENCES Movie,
-CHECK (RATING < 0 AND RATING < 6)
+CHECK (RATING > 0 AND RATING < 6)
 );
 
 --relation between movie and topic
