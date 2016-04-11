@@ -36,6 +36,11 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
   $average_rating=$rating['avgrating'];
   $rating=round($average_rating);
 
+  $query="SELECT M.MovieId, M.Name FROM Movie M, Directs D WHERE M.MovieId=D.MovieId AND D.directorid='$directorId';";
+  $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
+  $movies = pg_fetch_all($result);
+  print_r($movies);
+
 ?>
 
 <!DOCTYPE html>
@@ -142,15 +147,15 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
             <div class="col-md-4">
                 <h3>Country</h3>
                   <p>  <?php echo $directorInfo['country'];?> </p>
-                <h3>Movies Directed</h3>
+                <!-- <h3>Movies Directed</h3>
                   <ul>
                     <?php
-                      foreach($movies as &$movie){
-                        //print_r($movie);
-                        echo "<li><a href=\"MoviePage.php?movieId=" . $movie['movieid'] . "\"><p>" . $movie['name'] . "</p></a></li>";
-                      }
+                      // foreach($movies as &$movie){
+                      //   //print_r($movie);
+                      //   echo "<li><a href=\"MoviePage.php?movieId=" . $movie['movieid'] . "\"><p>" . $movie['name'] . "</p></a></li>";
+                      // }
                       ?>
-                 </ul>
+                 </ul> -->
                  <h3>Average Rating For Movies</h3>
                  <p>
                    <!-- <strong class="choice">Choose a rating</strong> -->
@@ -177,13 +182,27 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header"></h3>
+                <h3 class="page-header">Movies</h3>
             </div>
+
+            <?php
+              foreach($movies as $movie)
+              {
+                $movieid = $movie['movieid'];
+                $name = $movie['name'];
+                echo "<div class=\"col-sm-3 col-xs-6\">
+                    <a href=\"MoviePage.php?movieId=$movieid\">
+                        <img class=\"img-responsive portfolio-item\" src=\"img/moviePos/$movieid.jpg\" alt=\"http://placehold.it/500x300\"  onError=\"this.onerror=null;this.src='http://placehold.it/500x300';\">
+                        <P>$name</p>
+                    </a>
+                </div>";
+              }
+             ?>
+<!--
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item"
-                     src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
                 </a>
             </div>
 
@@ -203,7 +222,7 @@ WHERE M.MovieId=D.MovieId AND D.directorId='$directorId';;";
                 <a href="#">
                     <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
                 </a>
-            </div>
+            </div> -->
 
         </div>
         <!-- /.row -->
