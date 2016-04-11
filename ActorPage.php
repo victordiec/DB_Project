@@ -98,7 +98,10 @@ WHERE M.MovieId=S.MovieId AND S.actorId='$actorId';;";
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                   <li class="hidden">
-                      <a href="#page-top"></a>
+                      <a href="movies.php"></a>
+                  </li>
+                  <li class="page-scroll">
+                      <a href="actors.php">Actors</a>
                   </li>
                   <li class="page-scroll">
                       <a href="#WillGoToTheAccountPage">My Account</a>

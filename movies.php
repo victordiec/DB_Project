@@ -70,10 +70,10 @@
                   </li>
                   <!-- <li class="page-scroll">
                       <a href="#portfolio">Portfolio</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#about">About</a>
                   </li> -->
+                  <li class="page-scroll">
+                      <a href="actors.php">Actors</a>
+                  </li>
                   <li class="page-scroll">
                       <a href="#WillGoToTheAccountPage">My Account</a>
                   </li>

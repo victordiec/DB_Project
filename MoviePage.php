@@ -97,6 +97,9 @@
                       <a href="#page-top"></a>
                   </li>
                   <li class="page-scroll">
+                      <a href="actors.php">Actors</a>
+                  </li>
+                  <li class="page-scroll">
                       <a href="#WillGoToTheAccountPage">My Account</a>
                   </li>
                   <li class="page-scroll" id="signout">
@@ -156,8 +159,6 @@
             </div>
 
             <div class="col-md-4">
-                <h3>Description</h3>
-                <p><?php echo $movieInfo['description'];?></p>
                 <h3>Movie Details</h3>
                 <ul>
                     <li>
@@ -195,6 +196,10 @@
                       </a>
                     </li>
                 </ul>
+            </div>
+            <div class="col-lg-8">
+                <h3>Description</h3>
+                <p><?php echo $movieInfo['description'];?></p>
             </div>
 
         </div>
