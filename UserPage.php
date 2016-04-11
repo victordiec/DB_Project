@@ -1,7 +1,7 @@
 <?php
   //Start the session
   session_start();
-  print_r($_SESSION);
+  // print_r($_SESSION);
 
   $userId = $_SESSION['username'];
 
@@ -15,7 +15,7 @@
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $movieRatings = pg_fetch_all($result);
 
-  print_r($movieRatings);
+  // print_r($movieRatings);
 ?>
 
 <!DOCTYPE html>
@@ -106,8 +106,28 @@
         <!-- /.row -->
 
         <!-- Portfolio Item Row -->
-        <div class="row">
-            <p id="demo"></p>
+        <div class="row" align="center">
+            <p id="ratings"></p>
+            <table style="width:60%" align="center">
+              <h2>Movie Ratings</h2>
+              <tr>
+                <th><h4>Movie</h4></th>
+                <th><h4>Rating</h4></th>
+              </tr>
+              <?php
+                if(!empty($movieRatings))
+                {
+                  foreach($movieRatings as $movieRating)
+                  {
+                    $movieId = $movieRating['movieid'];
+                    $movieName = $movieRating['name'];
+                    $rating = $movieRating['rating'];
+                    echo "<tr><td><a href=\"MoviePage.php?movieId=$movieId\"><h4>$movieName</h4></a></td><td>$rating</td></tr>";
+                  }
+                }
+              ?>
+            </table>
+
 
 
         </div>
