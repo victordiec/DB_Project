@@ -204,36 +204,68 @@ INSERT INTO Users (UserID, password, lastname, firstname, email, city, province,
 INSERT INTO Users (UserID, password, lastname, firstname, email, city, province, country) VALUES ('I','password', 'Scott', 'Travis', 'lasatherit@gmail.com', 'Mississauga', 'Ontario', 'Canada');
 
 --Topic Injections
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00001','Science fiction film/Thriller'); 
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00002','Fantasy/Drama'); 
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00003','Drama film/Sport '); 
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00004','Sci-Fi'); 
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00005','Fantasy/Science'); 
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00006','Fantasy/Comedy-drama'); 
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00007','Thriller/Action');
-INSERT INTO Topics (TopicID, Descirption) VALUES ('00008','Comedy');
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00001','Science Fiction'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00002','Fantasy'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00003','Drama '); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00004','Sport'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00005','Science'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00006','Comedy'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00007','Thriller');
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00008','Horror');
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00009','Documentary'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00010','Action'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00011','Adventure'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00012','Animation'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00013','Crime'); 
+INSERT INTO Topics (TopicID, Descirption) VALUES ('00014','Mystery'); 
 
 --MovieTopics Injections
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00005','00001', 'English', 'y', 'Canada'); --Batman/Superman
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00005','00003', 'English', 'y', 'Canada'); --Deadpool
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00005','00002', 'English', 'y', 'Canada'); --Terminator
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00001', 'English', 'y', 'Canada'); --Batman/Superman
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00001', 'English', 'y', 'Canada'); --Batman/Superman
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00002','00001', 'English', 'y', 'Canada'); --Batman/Superman
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00003', 'English', 'y', 'Canada'); --Deadpool
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00003', 'English', 'y', 'Canada'); --Deadpool
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00006','00003', 'English', 'y', 'Canada'); --Deadpool
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00002', 'English', 'y', 'Canada'); --Terminator
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00002', 'English', 'y', 'Canada'); --Terminator
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00004', 'English', 'y', 'Canada'); --Jurassic World
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00005','00005', 'English', 'y', 'Canada'); --X-Men Apocolypse
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00005','00006', 'Englsih', 'y', 'Canada'); --Suicide Squad
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00011','00004', 'English', 'y', 'Canada'); --Jurassic World
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00007','00004', 'English', 'y', 'Canada'); --Jurassic World
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00005', 'English', 'y', 'Canada'); --X-Men Apocolypse
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00005', 'English', 'y', 'Canada'); --X-Men Apocolypse
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00006', 'Englsih', 'y', 'Canada'); --Suicide Squad
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00002','00006', 'Englsih', 'y', 'Canada'); --Suicide Squad
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00006', 'Englsih', 'y', 'Canada'); --Suicide Squad
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00002','00007', 'English', 'y', 'Canada'); --The Jungle Book
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00005','00008', 'English', 'y', 'Canada'); --Mad Max
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00011','00007', 'English', 'y', 'Canada'); --The Jungle Book
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00007','00007', 'English', 'y', 'Canada'); --The Jungle Book
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00008', 'English', 'y', 'Canada'); --Mad Max
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00002','00008', 'English', 'y', 'Canada'); --Mad Max
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00011','00008', 'English', 'y', 'Canada'); --Mad Max
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00003','00009', 'English', 'y', 'Canada'); --Creed
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00004','00009', 'English', 'y', 'Canada'); --Creed
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00006','00010', 'English', 'y', 'Canada'); --Inside out
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00007','00011', 'English', 'y', 'Canada'); 
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00005','00012', 'English', 'y', 'Canada'); 
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00008','00013', 'English', 'y', 'Canada'); 
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00008','00014', 'English', 'y', 'Canada'); 
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00002','00015', 'English', 'y', 'Canada'); 
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00016', 'Englsih', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00012','00010', 'English', 'y', 'Canada'); --Inside out
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00006','00011', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00011', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00013','00011', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00013','00012', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00014','00012', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00007','00012', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00003','00013', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00006','00013', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00006','00014', 'English', 'y', 'Canada');
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00014', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00003','00015', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00007','00015', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00003','00016', 'Englsih', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00013','00016', 'Englsih', 'y', 'Canada'); 
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00003','00017', 'English', 'y', 'Canada'); 
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00003','00018', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00003','00019', 'English', 'y', 'Canada'); 
 INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00006','00019', 'English', 'y', 'Canada'); 
-INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00001','00020', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00002','00020', 'English', 'y', 'Canada'); 
+INSERT INTO MovieTopics (TopicID, MovieID, Language, Subtitles, Country) VALUES ('00010','00020', 'English', 'y', 'Canada'); 
 
 --Role Injections
 INSERT INTO Role (RoleID, Name, ActorID, MovieID) VALUES ('00001','Batman', '00001','00001'); --Batman/Superman
