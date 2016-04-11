@@ -39,7 +39,7 @@ WHERE M.MovieId=S.MovieId AND S.actorId='$actorId';;";
   $query="SELECT M.MovieId, M.Name FROM Movie M, ActorStars S WHERE M.MovieId=S.MovieId AND S.actorid='$actorId';";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $movies = pg_fetch_all($result);
-  print_r($movies);
+  // print_r($movies);
 
 ?>
 

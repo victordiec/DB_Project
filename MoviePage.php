@@ -215,7 +215,7 @@
                 $actorid = $actor['actorid'];
                 $name = $actor['firstname'] . " " . $actor['lastname'];
                 echo "<div class=\"col-sm-3 col-xs-6\">
-                    <a href=\"#\">
+                    <a href=\"ActorPage.php?actorId=$actorid\">
                         <img class=\"img-responsive portfolio-item\" src=\"img/actorPics/$actorid.jpg\" alt=\"http://placehold.it/500x300\"  onError=\"this.onerror=null;this.src='http://placehold.it/500x300';\">
                         <P>$name</p>
                     </a>

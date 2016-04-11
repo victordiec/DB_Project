@@ -147,6 +147,7 @@ INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00012','00023'); --Know you s
 INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00012','00004'); --Know you see me
 INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00013','00024'); --Trainwreck
 INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00013','00025'); --Trainwreck
+INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00013','00017'); --Trainwreck
 INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00014','00026'); --Pineapple Express
 INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00014','00027'); --Pineapple Express
 INSERT INTO ActorStars (MovieID, ActorID) VALUES ('00014','00028'); --Pineapple Express
