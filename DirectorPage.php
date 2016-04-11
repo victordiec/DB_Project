@@ -3,34 +3,21 @@
   session_start();
   print_r($_SESSION);
 
-  $movieId = $_GET['movieId'];
+  $directorId = $_GET['directorId'];
 
   include 'core/db.php';
   //Test Query for now
-  $query = "SELECT * FROM Movie m WHERE m.movieId='$movieId'";
-  $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
-  $movieInfo = pg_fetch_assoc($result);
-
-  // $query = "SELECT MovieId FROM Movie WHERE m.movieId='$movieId'";
-  // $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
-  // $movieId = pg_fetch_assoc($result);
-
-  // $query = "SELECT * FROM Movie m WHERE m.movieId='$movieId'";
-  // $average_rating
-
-  $query =
-    "SELECT D.FirstName, D.LastName, D.DirectorID
-    FROM Director D, Directs R, Movie M
-    WHERE D.DirectorID=R.DirectorID AND R.MovieID=M.MovieID AND M.MovieID='$movieId';";
+  $query = "SELECT * FROM Director WHERE directorId='$directorId'";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $directorInfo = pg_fetch_assoc($result);
 
-  $query="SELECT AVG(W.Rating) AS rating
-          FROM Movie M, Watches W
-          WHERE W.MovieId=M.MovieId AND M.MovieId='$movieId';";
+//returns all movies that director has been apart of
+  $query = "SELECT movieId FROM Directs WHERE directorId='$directorId'";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
-  $tempArr = pg_fetch_assoc($result);
-  $averageRating=$tempArr['rating'];
+  $movies = pg_fetch_assoc($result);
+
+  // $query = "SELECT * FROM Movie m WHERE m.movieId='$movieId'";
+  // $average_rating
 
 ?>
 
@@ -44,7 +31,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $movieInfo["name"];?></title>
+    <title><?php echo $directorInfo["name"];?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -111,7 +98,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 id = "moviename" class="page-header">
-                    <?php echo $movieInfo['name'];?>
+                    <?php echo $directorInfo['firstname'] . "  " . $directorInfo['lastname'];?>
                     <!-- <small id = ""> </small> -->
                 </h1>
             </div>
@@ -130,65 +117,19 @@
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <!-- <a href="<?php echo $movieInfo['trailerlink']?>"> -->
-                        <a href="<?php echo $movieInfo['trailerlink']?>">
-                          <img src="img/portfolio/<?php echo $movieId;?>/a.jpg">
-                        </a>
-                    </div>
-
-                    <div class="item">
-                      <a href="<?php echo $movieInfo['trailerlink']?>">
-                        <img src="img/portfolio/<?php echo $movieId;?>/b.jpg">
-                      </a>
-                    </div>
-
-                    <div class="item">
-                      <a href="<?php echo $movieInfo['trailerlink']?>">
-                        <img src="img/portfolio/<?php echo $movieId;?>/c.jpg">
-                      </a>
+                        
+                          <img src="img/directorPics/<?php echo $directorId;?>.jpg">
+                       
                     </div>
                   </div>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <h3>Description</h3>
-                <p><?php echo $movieInfo['description'];?></p>
-                <h3>Movie Details</h3>
-                <ul>
-                    <li>Release date:
-                      <p>
-                        <?php echo $movieInfo['releasedate'];?>
-                      </p>
-                    </li>
-                    <li>Average Rating
-                      <p>
-                        <!-- <strong class="choice">Choose a rating</strong> -->
-                        <div class="stars" id="rating">
-                          <form action="">
-                            <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
-                            <label class="star star-5" for="star-5"></label>
-                            <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
-                            <label class="star star-4" for="star-4"></label>
-                            <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
-                            <label class="star star-3" for="star-3"></label>
-                            <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
-                            <label class="star star-2" for="star-2"></label>
-                            <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
-                            <label class="star star-1" for="star-1"></label>
-                          </form>
-                        </div>
-                        <!-- <strong class="choice">Choose a rating</strong> -->
-                        <!-- <?php echo $averageRating;?> -->
-                      </p>
-                    </li>
-                    <li>Director:
-                      <a href="DirectorPage.php?directorId=<?php echo $directorInfo['directorid'];?>">
-                        <p>
-                          <?php echo $directorInfo['firstname'] . " " . $directorInfo['lastname'];?>
-                        </p>
-                      </a>
-                    </li>
-                </ul>
+                <h3>Country</h3>
+                  <p>  <?php echo $directorInfo['country'];?> </p>
+                <h3>Movies Directed</h3>
+                  <p>  <?php echo $movies;?> </p>
             </div>
 
         </div>
@@ -198,7 +139,7 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">Related Movies or actors of the movie here?</h3>
+                <h3 class="page-header"></h3>
             </div>
 
             <div class="col-sm-3 col-xs-6">
