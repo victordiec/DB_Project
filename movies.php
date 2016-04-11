@@ -3,10 +3,13 @@
   session_start();
   // print_r($_SESSION);
   //
-  // include 'core/db.php';
+  include 'core/db.php';
   // //Test Query for now
-  // $query = "SELECT * FROM Movie m WHERE m.movieId=";
-  // $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
+  $query = "SELECT M.MovieId FROM Movie M";
+  $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
+  $movies = pg_fetch_all($result);
+  // print_r($movies);
+
 ?>
 
 <!DOCTYPE html>
@@ -90,10 +93,19 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h1 class="page-header">Top Movies</h1>
+                <h1 class="page-header">All Movies</h1>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <?php
+              foreach($movies as $movie)
+              {
+                $movieId = $movie['movieid'];
+                echo "<div class=\"col-lg-4 col-md-4 col-xs-6 thumb\"><a class=\"thumbnail\" href=\"MoviePage.php?movieId=$movieId\"><img class=\"img-responsive\" src=\"img/moviePos/$movieId.jpg\" alt=\"\"></a></div>";
+              }
+
+             ?>>
+
+            <!-- <div class="col-lg-4 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="MoviePage.php?movieId=00001">
                     <img class="img-responsive" src="img/moviePos/00001.jpg" alt="">
                 </a>
@@ -192,7 +204,7 @@
                 <a class="thumbnail" href="MoviePage.php?movieId=00020">
                     <img class="img-responsive" src="img/moviePos/00020.jpg" alt="">
                 </a>
-            </div>
+            </div> -->
 
         </div>
 
