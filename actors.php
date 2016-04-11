@@ -5,7 +5,7 @@
   //
   include 'core/db.php';
   // //Test Query for now
-  $query = "SELECT A.ActorId FROM Actor A";
+  $query = "SELECT A.ActorId, A.Firstname, A.lastname FROM Actor A";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $actors = pg_fetch_all($result);
   // print_r($movies);
@@ -69,7 +69,7 @@
                       <a href="actors.php">Actors</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#WillGoToTheAccountPage">My Account</a>
+                      <a href="UserPage.php?userId=<?php echo $_SESSION['username'];?>">My Account</a>
                   </li>
                   <li class="page-scroll" id="signout">
                       <a href="index.php">Sign Out</a>
@@ -87,14 +87,15 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h1 class="page-header">All Movies</h1>
+                <h1 class="page-header">All Actors</h1>
             </div>
 
             <?php
               foreach($actors as $actor)
               {
                 $actorId = $actor['actorid'];
-                echo "<div class=\"col-lg-4 col-md-4 col-xs-6 thumb\"><a class=\"thumbnail\" href=\"ActorPage.php?movieId=$actorId\"><img class=\"img-responsive\" src=\"img/actorPics/$actorId.jpg\" alt=\"\"></a></div>";
+                $actorName = $actor['firstname'] . " " . $actor['lastname'];
+                echo "<div class=\"col-lg-4 col-md-4 col-xs-6 thumb\"><a class=\"thumbnail\" href=\"ActorPage.php?movieId=$actorId\"><img class=\"img-responsive\" src=\"img/actorPics/$actorId.jpg\" alt=\"ProfilePicture\" onError=\"this.onerror=null;this.src='http://placehold.it/300x400';\"></a><div align=\"center\">$actorName</div></div>";
               }
 
              ?>>

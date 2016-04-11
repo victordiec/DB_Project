@@ -5,7 +5,7 @@
   //
   include 'core/db.php';
   // //Test Query for now
-  $query = "SELECT M.MovieId FROM Movie M";
+  $query = "SELECT M.MovieId, M.Name FROM Movie M";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $movies = pg_fetch_all($result);
   // print_r($movies);
@@ -75,7 +75,7 @@
                       <a href="actors.php">Actors</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#WillGoToTheAccountPage">My Account</a>
+                      <a href="UserPage.php?userId=<?php echo $_SESSION['username'];?>">My Account</a>
                   </li>
                   <li class="page-scroll" id="signout">
                       <a href="index.php">Sign Out</a>
@@ -100,7 +100,8 @@
               foreach($movies as $movie)
               {
                 $movieId = $movie['movieid'];
-                echo "<div class=\"col-lg-4 col-md-4 col-xs-6 thumb\"><a class=\"thumbnail\" href=\"MoviePage.php?movieId=$movieId\"><img class=\"img-responsive\" src=\"img/moviePos/$movieId.jpg\" alt=\"\"></a></div>";
+                $movieTitle = $movie['name'];
+                echo "<div class=\"col-lg-4 col-md-4 col-xs-6 thumb\"><a class=\"thumbnail\" href=\"MoviePage.php?movieId=$movieId\"><img class=\"img-responsive\" src=\"img/moviePos/$movieId.jpg\" alt=\"\"></a><div align=\"center\">$movieTitle</div></div>";
               }
 
              ?>>

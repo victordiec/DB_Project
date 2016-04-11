@@ -104,7 +104,7 @@ WHERE M.MovieId=S.MovieId AND S.actorId='$actorId';;";
                       <a href="actors.php">Actors</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#WillGoToTheAccountPage">My Account</a>
+                      <a href="UserPage.php?userId=<?php echo $_SESSION['username'];?>">My Account</a>
                   </li>
                   <li class="page-scroll" id="signout">
                       <a href="index.php">Sign Out</a>

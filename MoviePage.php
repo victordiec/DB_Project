@@ -1,7 +1,7 @@
 <?php
   //Start the session
   session_start();
-  // print_r($_SESSION);
+  print_r($_SESSION);
 
   $movieId = $_GET['movieId'];
 
@@ -41,7 +41,7 @@
             WHERE M.MovieID=P.MovieID AND S.StudioID=P.StudioID AND M.MovieID='$movieId';";
   $result = pg_query($dbconn, $query);// or die('Query failed: ' . pg_last_error());
   $studio = pg_fetch_assoc($result);
-  print_r($studio);
+  // print_r($studio);
 
   $query = "SELECT T.Descirption FROM Movie M, Topics T, MovieTopics R
             WHERE M.MovieID=R.MovieID AND T.TopicId=R.TopicId AND M.MovieID='$movieId';";
@@ -112,7 +112,7 @@
                       <a href="actors.php">Actors</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#WillGoToTheAccountPage">My Account</a>
+                      <a href="UserPage.php?userId=<?php echo $_SESSION['username'];?>">My Account</a>
                   </li>
                   <li class="page-scroll" id="signout">
                       <a href="index.php">Sign Out</a>
@@ -220,7 +220,7 @@
                           {
                             foreach($topics as $topic)
                             {
-                              $description = $topic['description'];
+                              $description = $topic['descirption'];
                               echo "<li>$description</li>";
                             }
                           }

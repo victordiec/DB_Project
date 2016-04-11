@@ -6,7 +6,7 @@
   //Don't need to show the sign in page if you're already logged in
   if(isset($_SESSION['username']))
   {
-    header('Location: home.php');
+    header('Location: movies.php');
   }
   else {
     // echo "lol";
