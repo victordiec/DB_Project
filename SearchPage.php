@@ -112,7 +112,7 @@
                       <a href="actors.php">Actors</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#WillGoToTheAccountPage">My Account</a>
+                      <a href="UserPage.php?userId=<?php echo $_SESSION['username'];?>">My Account</a>
                   </li>
                   <li class="page-scroll" id="signout">
                       <a href="index.php">Sign Out</a>
@@ -143,35 +143,17 @@
                          <div class="row control-group">
                              <div class="form-group col-xs-12 floating-label-form-group controls">
                                  <label>Movies</label>
-                                 <input type="text" class="form-control" placeholder="Movie Search" id="moviesearch" name="moviesearch" required data-validation-required-message="Please enter your username.">
+                                 <input type="text" class="form-control" placeholder="Movie Search" id="moviesearch" name="moviesearch">
                                  <p class="help-block text-danger"></p>
                              </div>
                          </div>
                          <div class="row control-group">
                              <div class="form-group col-xs-12 floating-label-form-group controls">
                                  <label>Actors</label>
-                                 <input type="text" class="form-control" placeholder="Actor Search" id="actorsearch" name="actorsearch" required data-validation-required-message="Please enter your password.">
+                                 <input type="text" class="form-control" placeholder="Actor Search" id="actorsearch" name="actorsearch">
                                  <p class="help-block text-danger"></p>
                              </div>
                          </div>
-                         <!-- <div class="row control-group">
-                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                 <label>Search Actors</label>
-                                 <input type="text" class="form-control" placeholder="Search Actors" id="actorsearch" name="actorsearch" >
-                             </div>
-                         </div>
-                         <div class="row control-group">
-                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                 <label>Search Studio</label>
-                                 <input type="text" class="form-control" placeholder="Search Studio" id="studiosearch" name="studiosearch" >
-                             </div>
-                         </div>
-                         <div class="row control-group">
-                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                 <label>Search Directors</label>
-                                 <input type="text" class="form-control" placeholder="Search Directors" id="directorsearch" name="directorsearch">
-                             </div>
-                         </div> -->
                          <br>
                          <div id="success"></div>
                          <div class="row">
@@ -185,9 +167,11 @@
          </div>
      </section>
 
-     <div id="results">
+     <div id="results" align="center" hidden>
+       <p id="ResultsLabel">Results</p>
 
 
+       </table>
      </div>
 
         </div>

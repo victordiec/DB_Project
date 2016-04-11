@@ -1,107 +1,69 @@
 $(function() {
-        window.onload = search;
-        // get values from FORM
-        
-        function search() {
-        var movies = $("input#moviesearch").val();
-        var actors = $("input#actorsearch").val();
-        //var studios = $("input#studiosearch").val();
-        //var directors = $("input#directorsearch").val();
+  $("#searchForm input").jqBootstrapValidation({
+      preventSubmit: true,
+      submitError: function($form, event, errors) {
+          // additional error messages or events
+      },
+      submitSuccess: function($form, event) {
+          // Prevent spam click and default submit behaviour
+          $("#btnSubmit").attr("disabled", true);
+          event.preventDefault();
 
-        console.log("js received " + movies + "  " + actors );
+          // get values from FORM
+          var movie = $("input#moviesearch").val();
+          var actor = $("input#actorsearch").val();
 
-            $.ajax({
-                url: "././core/searchall.php",
-                type: "GET",
-                dataType: "json",
-                success: function(res) {
-                  console.log(res);
-                  console.log("ajax request was a success");
+          console.log("js received " + movie + " and " + actor);
 
+          $.ajax({
+              url: "././core/searchall.php",
+              type: "POST",
+              data: {
+                  movieName: movie,
+                  actorName: actor,
+              },
 
-                  // console.log("Beginning of data\n" + data + "\nendof");
-                  document.getElementById('results').innerHTML = res;
+              cache: false,
+              success: function(data) {
+                console.log("ajax request was a success");
+                console.log("Beginning of data\n" + data + "\nendof");
+                // console.log("Beginning of data\n" + data[0] + "\nendof");
 
-                  
+                var json = JSON.parse(data);
 
-                    // $('#success').html("<div class='alert alert-success'>");
-                    // $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                    //     .append("</button>");
-                    // $('#success > .alert-success')
-                    //     .append("<strong>Your message has been sent. </strong>");
-                    // $('#success > .alert-success')
-                    //     .append('</div>');
-                    //
-                    // //clear all fields
-                    // $('#contactForm').trigger("reset");
-                },
-                error: function(res) {
-                  console.log("ajax request had a failure" + res);
+                // console.log(json[0]);
 
-                },
-            })
-        };
+                var tbl=$("<table/>").attr("id","mytable").attr("style","width:60%").attr("align","center");
+                $("#results").append(tbl);
+                $("#results").show();
 
+                for(var i=0; i<json.length; i++)
+                {
+                    var tr="<tr>";
+                    var td1="<td>"+json[i]["movieid"]+"</td>";
+                    var td2="<td>"+json[i]["name"]+"</td></tr>";
+                   $("#mytable").append(tr+td1+td2);
+                }
+
+              },
+              error: function(data) {
+                console.log("ajax request had a failure" + data);
+                  // Fail message
+                  // $('#success').html("<div class='alert alert-danger'>");
+                  // $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                  //     .append("</button>");
+                  // $('#success > .alert-danger').append("<strong>Sorry " + username + ", it seems that my mail server is not responding. Hope you have more luck next time xD!");
+                  // $('#success > .alert-danger').append('</div>');
+                  // //clear all fields
+                  // $('#contactForm').trigger("reset");
+              },
+          })
+      },
+      filter: function() {
+          return $(this).is(":visible");
+      },
+  });
 });
-            // $.ajax({
-            //     url: "././core/connect.php",
-            //     type: "POST",
-            //     data: {
-            //         username: username,
-            //         password: password,
-            //     },
-
-            //     cache: false,
-            //     success: function(data) {
-            //       console.log("ajax request was a success");
-            //       console.log("Beginning of data\n" + data + "\nendof");
-
-            //       if(data === "false")
-            //       {
-            //           console.log("Incorrect username/password");
-            //           $('#success').html("<div class='alert alert-danger'>");
-            //           $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            //               .append("</button>");
-            //           $('#success > .alert-danger').append("<strong>Incorrect username/password combination.  Please try again ;P");
-            //           $('#success > .alert-danger').append('</div>');
-            //           //clear all fields
-            //           $('#contactForm').trigger("reset");
-            //       }
-            //       else if(data.indexOf("Could not connect: ") != -1)
-            //       {
-            //         console.log("Could not connect to database");
-                    
-            //       }
-            //       else {
-            //         // Enable button & show success message
-            //         $("#btnSubmit").attr("disabled", false);
-
-            //         window.location="movies.php";
-            //       }
-
-            //         // $('#success').html("<div class='alert alert-success'>");
-            //         // $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            //         //     .append("</button>");
-            //         // $('#success > .alert-success')
-            //         //     .append("<strong>Your message has been sent. </strong>");
-            //         // $('#success > .alert-success')
-            //         //     .append('</div>');
-            //         //
-            //         // //clear all fields
-            //         // $('#contactForm').trigger("reset");
-            //     },
-            //     error: function(data) {
-            //       console.log("ajax request had a failure" + data);
-            //         // Fail message
-            //         $('#success').html("<div class='alert alert-danger'>");
-            //         $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            //             .append("</button>");
-            //         $('#success > .alert-danger').append("<strong>Sorry " + username + ", it seems that my mail server is not responding. Hope you have more luck next time xD!");
-            //         $('#success > .alert-danger').append('</div>');
-            //         //clear all fields
-            //         $('#contactForm').trigger("reset");
-            //     },
-            // })
 
 // When clicking on Full hide fail/success boxes
 $('#name').focus(function() {
